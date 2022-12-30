@@ -8,9 +8,9 @@ export default function Koptelefoon(props) {
     return (
         <View style={styles.View}>
             <Image style={styles.foto} source={{uri: props.foto}}/>
-            <Text>{props.naam}</Text>
-            <Text>€ {props.prijs}</Text>
-            <Text>{props.review} &#11088;</Text>
+            <Text style={styles.naam}>{props.naam}</Text>
+            <Text style={styles.prijs}>€ {props.prijs}</Text>
+            <Text>{props.review} &#11088; / 5 &#11088;</Text>
         </View>
     );
   }
@@ -21,12 +21,23 @@ export default function Koptelefoon(props) {
       justifyContent: 'center',
       alignItems: 'center',
       height: 250,
+      borderColor: 'black',
+      borderRadius: 20,
+      borderWidth: 2,
+      marginBottom: 5,
+      marginTop: 5,
+      backgroundColor: 'white'
     },
     foto: {
         height: 150, 
         aspectRatio: 1/1,
-        borderWidth: 1,
-        borderColor: 'black',
+    },
+    naam: {
+      fontSize: 25,
+    },
+    prijs: {
+      color: 'black',
+      fontSize: 20,
     }
   });
   
