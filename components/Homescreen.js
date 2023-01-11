@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
 
 import Koptelefoon from '../components/Koptelefoon';
-import Filter from '../components/Filter';
+//import Filter from '../components/Filter';
 
- function Homescreen(){
+ function Homescreen({navigation}){ // changed
 
   const [headphones, setHeadphones] = useState([]);
   //const [filters, setFilters] = useState([]);
@@ -54,6 +54,7 @@ import Filter from '../components/Filter';
           naam = {item.title.rendered}
           prijs = {item.prijs}
           review = {item.review}
+          onReadMore = {(id) => navigation.navigate('Details', { key: id })} // changed
         />
       }
     />

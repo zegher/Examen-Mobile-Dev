@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StyleSheet, Text, View, Image, uri } from 'react-native';
+import { StyleSheet, Text, View, Image, uri, Button } from 'react-native';
 
 
 export default function Koptelefoon(props) {
@@ -11,6 +11,11 @@ export default function Koptelefoon(props) {
             <Text style={styles.naam}>{props.naam}</Text>
             <Text style={styles.prijs}>€ {props.prijs}</Text>
             <Text>{props.review} &#11088; / 5 &#11088;</Text>
+
+            <Button style={styles.knop}
+            title='Read More'
+            onPress={() => props.onReadMore(props.id)} // Changed
+            />
         </View>
     );
   }
@@ -25,12 +30,18 @@ export default function Koptelefoon(props) {
       borderRadius: 20,
       borderWidth: 2,
       marginBottom: 5,
-      marginTop: 5,
-      backgroundColor: 'white'
+      marginTop: 15,
+
+      paddingTop: 15,
+      paddingBottom: 40,
+      
+      backgroundColor: 'white',
+
     },
     foto: {
-        height: 150, 
+        height: 125, 
         aspectRatio: 1/1,
+        marginTop: 20,
     },
     naam: {
       fontSize: 25,
@@ -38,6 +49,9 @@ export default function Koptelefoon(props) {
     prijs: {
       color: 'black',
       fontSize: 20,
+    },
+    knop: {
+      backgroundColor: 'black',
     }
   });
   
