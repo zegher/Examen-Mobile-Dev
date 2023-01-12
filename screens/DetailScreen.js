@@ -10,16 +10,22 @@ import Koptelefoon from '../components/Koptelefoon';
 const DetailScreen = ({ navigation }) => {    
     
   const [headphones, setHeadphones] = useState([]);
+
+
+  const [isAppKlaar, SetIsAppKlaar] = useState(false);
   //const [filters, setFilters] = useState([]);
   const getHeadphones = async () => {
     try{
-      const res = await fetch('https://zegher.be/wp-json/wp/v2/headphones');
+      const res = await fetch('https://zegher.be/wp-json/wp/v2/headphones/130');
       const json = await res.json();
       console.log(json);
       setHeadphones(json);
     }
     catch (err){
       console.log(err);
+    }
+    finally{
+      SetIsAppKlaar(true);
     }
   }
 
@@ -30,26 +36,25 @@ const DetailScreen = ({ navigation }) => {
   return(
       
       <View style={styles.screen}>
-        <FlatList 
-      ListHeaderComponent={
-        <Button title="go back" onPress={() => navigation.goBack()}/>    
-      }
-
-
-      style={styles.flatlist}
+        <Button style={styles.knop} title="go back" onPress={() => navigation.goBack()}    
+      
       data={headphones}
       keyExtractor={item => item.id}
       
 
       renderItem={({item}) => 
       
-        <Koptelefoon 
-          style={styles.koptelefoon/1}
-          onReadMore = {(id) => navigation.navigate('Details', { key: id })} // changed
+        <Koptelefoon
+          style={styles.koptelefoon}
+          id = {item.id}
+          foto = {item.foto.guid}
+          naam = {item.title.rendered}
+          prijs = {item.prijs}
+          review = {item.review}
         />
       }
     />
-
+      <Text>{headphones.title.rendered}</Text>
       <StatusBar style="auto" />
     </View>
 
