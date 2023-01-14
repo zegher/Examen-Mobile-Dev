@@ -43,12 +43,12 @@ const DetailScreen = ({ navigation, route }) => {
       
       <View style={styles.screen}>
 
-        <Image style={{width:200,height:300}}  source={headphones.foto.gui}/>
+        <Image style={styles.foto} source={{uri: headphones.foto.guid}}/>
         <Text style={styles.naam}>{headphones.title.rendered}</Text>
         <Text style={styles.besch}>{headphones.description}</Text>
         <Text style={styles.prijs}>€{headphones.prijs}</Text>
         <Text style={styles.score}>{headphones.review} &#11088; / 5 &#11088;</Text>
-        <Button style={styles.knop} title="⇐ go bvack" onPress={() => navigation.goBack()}    
+        <Button style={styles.knop} title="⇐ go back" onPress={() => navigation.goBack()}    
         
       
 
@@ -76,33 +76,29 @@ const DetailScreen = ({ navigation, route }) => {
   export default DetailScreen;
 
   const styles = StyleSheet.create({
-    screen: {
-        flex: 1,
-        alignItems: 'center', 
-        justifyContent: 'center',
-    },
     naam: {
       fontSize: 30,
       fontWeight: 'bold',
-      marginTop: -500,
-      color: 'darkred',
+      color: 'red',
+      marginTop: -25,
+      
+    },
+    foto: {
+      height: 410, 
+      aspectRatio: 1/1,
     },
     score: {
       fontSize: 15,
-      backgroundColor: 'lightgrey',
       fontWeight: 'light',
+      backgroundColor: 'white',
     },
     prijs: {
       fontSize: 25,
-      backgroundColor: 'lightgrey',
       fontWeight: 'bold',
-    },
-    knop: {
-      display: 'flex',
-      justifyContent: 'left',
-      alignItems: 'left',
+        backgroundColor: 'white',
     },
     besch: {
       fontSize: 15,
+      backgroundColor: 'white',
     }
   });
