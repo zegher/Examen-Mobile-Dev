@@ -2,12 +2,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet, Text, View, Image } from 'react-native';
 
-import Homescreen from './components/Homescreen';
 import DetailScreen from './screens/DetailScreen';
+import SearchScreen from './screens/SearchScreen';
+import Homescreen from './components/Homescreen';
 
 const Stack = createNativeStackNavigator();
 
-export default function App() {
+export default function App(navigation) {
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -15,27 +16,20 @@ export default function App() {
           name="Homescreen" 
           component={Homescreen}
 
-          options={{title: "Headstore",
-          headerRight: () => <Image
-          style={styles.searchIcon}
-          source={require('../AwesomeProject/assets/icons/search.png')}
-          />}}
+          options={{title: "Headstore"}}
         />
         <Stack.Screen 
           name="Details" 
           component={DetailScreen} 
         />
+        <Stack.Screen
+          name="Search"
+          component={SearchScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  searchIcon: {
-    aspectRatio: 1/1,
-    width: 30,
-  },
-});
 
 /*
 onPress={() =>

@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
+import { StyleSheet, Text, View, Image, FlatList, TouchableHighlight } from 'react-native';
 
 import Koptelefoon from '../components/Koptelefoon';
 //import Filter from '../components/Filter';
@@ -27,12 +27,25 @@ import Koptelefoon from '../components/Koptelefoon';
 
   return(
     <View style={styles.container}>
-
+    
       <FlatList 
       ListHeaderComponent={
-        <Text style={styles.header1}>Hoofdtelefoons</Text>
+        <View style={styles.bheader}>
+            <Text style={styles.header1}>Hoofdtelefoons</Text>
+            <TouchableHighlight
+            onPress={() => navigation.navigate('Search')}>
+              <Image
+              style={styles.searchIcon}
+              source={require('../assets/icons/search.png')}
+              />
+            </TouchableHighlight>
+            
+
+        </View>
+        
       }
 
+      
 
       style={styles.flatlist}
       data={headphones}
@@ -44,8 +57,10 @@ import Koptelefoon from '../components/Koptelefoon';
         />
       }*/
 
+
+
       renderItem={({item}) => 
-      
+        
         <Koptelefoon 
           style={styles.koptelefoon}
 
@@ -77,17 +92,28 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 20,
   },
+  bheader: {
+    flexDirection: "row",
+    marginVertical: 5,
+    justifyContent: "space-around",
+    margin: -80,
+    backgroundColor: "lightgreen",
+  },
   header1: {
     fontSize: 20,
     fontWeight: '800',
     marginTop: 20,
-    paddingLeft: 15,
-    backgroundColor: 'lightgreen',
-    paddingTop: 15,
     marginTop: -0,
   },
   flatlist: {
     width: '100%',
     alignContent: 'center',
   },
+  searchIcon: {
+    height: 25,
+    width: 25,
+    paddingTop: -15,
+    backgroundColor: "lightgreen",
+  },
+  
 });
