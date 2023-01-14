@@ -8,8 +8,14 @@ console.log("é");
 export default function App() {
   return (
     <View>
-      <Text style={styles.zoeken}>   Zoeken...</Text>
 
+      <View style={styles.zoekbalk}>
+        <Text style={styles.zoeken}>   Zoeken...</Text>
+        <Image  style={styles.searchIcon}
+                source={require('../assets/icons/search.png')}
+        />
+      </View>
+      
       <Text style={styles.stitle}>Suggesties</Text>
         <View style={styles.suggesties}>
           <Text style={styles.sug1}>Noise Cancelling</Text>
@@ -31,15 +37,26 @@ export default function App() {
         alignItems: 'center', 
         justifyContent: 'center',
     },
+    zoekbalk: {
+      flexDirection: "row",
+      marginVertical: 5,
+      justifyContent: "space-around",
+      marginTop: 20,
+      marginBottom: 20,
+    },
+    searchIcon: {
+      height: 35,
+      width: 35,
+      marginTop: 2.5,
+      marginRight: 5,
+    },
     zoeken: {
       fontSize: 30,
       fontWeight: 'bold',
 
       borderWidth: 2,
       borderRadius: 500,
-
-      padding: 2,
-      margin: 15,
+      width: '80%',
 
       color: 'grey',
       backgroundColor: 'white',
@@ -80,5 +97,7 @@ export default function App() {
     marginVertical: 5,
     justifyContent: "space-around",
     padding: 10,
-    }
+    },
+    
+    
   });

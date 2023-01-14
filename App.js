@@ -16,7 +16,7 @@ export default function App(navigation) {
           name="Homescreen" 
           component={Homescreen}
 
-          options={{title: "Headstore"}}
+          options={{title: "Nieuwe stock headsets!"}}
         />
         <Stack.Screen 
           name="Details" 

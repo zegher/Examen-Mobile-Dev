@@ -1,6 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet, Text, View, Image, uri, Button } from 'react-native';
+import { withSafeAreaInsets } from 'react-native-safe-area-context';
 
 
 export default function Koptelefoon(props) {
@@ -33,16 +34,15 @@ export default function Koptelefoon(props) {
       marginBottom: 5,
       marginTop: 15,
 
-      paddingTop: 15,
-      paddingBottom: 40,
+      padding: 40,
       
       backgroundColor: 'white',
 
     },
     foto: {
-        height: 125, 
+        height: 110, 
         aspectRatio: 1/1,
-        marginTop: 20,
+        marginTop: 30,
     },
     naam: {
       fontSize: 25,
@@ -53,9 +53,17 @@ export default function Koptelefoon(props) {
     },
     knop: {
       backgroundColor: 'black',
+      marginBottom: 15,
     },
     kopen: {
       alignContent: "flex-end",
+      borderWidth: 1,
+      borderRadius: 35,
+      padding: 2,
+      color: 'white',
+      backgroundColor: 'black',
+      fontWeight: 'bold',
+      margin: 5,
     }
   });
   
