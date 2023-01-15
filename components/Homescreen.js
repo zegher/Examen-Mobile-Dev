@@ -9,7 +9,6 @@ import Koptelefoon from '../components/Koptelefoon';
 
   const [headphones, setHeadphones] = useState([]);
 
-  //const wishList = [];
   const [wish, setWish] = useState([]);
   console.log(wish)
 
@@ -39,7 +38,7 @@ import Koptelefoon from '../components/Koptelefoon';
             <Text style={styles.header1}>Hoofdtelefoons</Text>
             
             <TouchableHighlight
-              onPress={() => navigation.navigate('Wishlist', {wishListItems: addToWishlist})}>
+              onPress={() => navigation.navigate('Wishlist', {wish: wish})}>
               <Image
               style={styles.cartIcon}
               source={require('../assets/cart.png')}

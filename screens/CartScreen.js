@@ -2,9 +2,14 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StyleSheet, Text, View, Image, uri, Button, FlatList} from 'react-native';
+import { StyleSheet, Text, View, Image, uri, Button, Flatlist, ImageBackground } from 'react-native';
 
-export default function App() {
+
+export default function App({ navigation, route, wish}){
+  
+  //const  wish = route.params;
+  
+  //console.log(wish, "test");
   return (
     <View style={styles.container}>
 
@@ -13,9 +18,13 @@ export default function App() {
         <Text style={styles.winkwag}>Jouw wish-list!</Text>
       </View>
         
-        
+        <Flatlist
+          data={wish}
+          renderItem={({item}) => 
+            <Text>{item.title.rendered}</Text>
+        }
+        />
     </View>
-      
   );
 }
 
