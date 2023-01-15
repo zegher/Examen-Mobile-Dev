@@ -1,8 +1,13 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { setStatusBarTranslucent } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, uri, Button } from 'react-native';
 import { withSafeAreaInsets } from 'react-native-safe-area-context';
+import React from "react";
+import React, { Component } from "react";
 
+const {useState} = React;
+const WL = [];  
 
 export default function Koptelefoon(props) {
     console.log("Weergeven koptelefoon werkt")
@@ -12,7 +17,9 @@ export default function Koptelefoon(props) {
             <Text style={styles.naam}>{props.naam}</Text>
             <Text style={styles.prijs}>€ {props.prijs}</Text>
             <Text>{props.review} &#11088; / 5 &#11088;</Text>
-            <Text style={styles.kopen}>Voeg toe aan wishlist</Text>
+            <Text style={styles.kopen}
+            onPress ={() => WL.push(props.naam)}
+            >Voeg toe aan wishlist</Text>
 
             <Button style={styles.knop}
             title='Read More'
@@ -21,6 +28,7 @@ export default function Koptelefoon(props) {
         </View>
     );
   }
+  
 
   const styles = StyleSheet.create({
     View: {
