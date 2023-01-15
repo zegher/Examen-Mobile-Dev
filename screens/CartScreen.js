@@ -2,14 +2,14 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StyleSheet, Text, View, Image, uri, Button, Flatlist, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, Image, uri, Button, FlatList, ImageBackground } from 'react-native';
 
-
-export default function App({ navigation, route, wish}){
+export function CartScreen({navigation, route}){
   
-  //const  wish = route.params;
+  const  {wish} = route.params;
   
-  //console.log(wish, "test");
+  console.log(wish, "test");
+  
   return (
     <View style={styles.container}>
 
@@ -18,12 +18,13 @@ export default function App({ navigation, route, wish}){
         <Text style={styles.winkwag}>Jouw wish-list!</Text>
       </View>
         
-        <Flatlist
-          data={wish}
-          renderItem={({item}) => 
-            <Text>{item.title.rendered}</Text>
+      <FlatList
+        data={wish}
+        keyExtractor={(item, index) => index}
+        renderItem={({item}) => 
+          <Text style={styles.wishText}>{item}</Text>
         }
-        />
+      />
     </View>
   );
 }
@@ -49,6 +50,12 @@ const styles = StyleSheet.create({
       height: 35,
       width: 35,
       marginTop: 10,
+    },
+    wishText: {
+      fontSize: 25,
+      fontWeight: 'bold',
+      padding: 5,
+      marginLeft: 15,
     }
     
   });

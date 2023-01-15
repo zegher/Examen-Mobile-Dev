@@ -5,7 +5,7 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import DetailScreen from './screens/DetailScreen';
 import SearchScreen from './screens/SearchScreen';
 import Homescreen from './components/Homescreen';
-import CartScreen from './screens/CartScreen';
+import {CartScreen} from './screens/CartScreen';
 import { useEffect } from 'react';
 
 const Stack = createNativeStackNavigator();
