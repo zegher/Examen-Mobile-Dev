@@ -53,28 +53,13 @@ import Koptelefoon from '../components/Koptelefoon';
               source={require('../assets/icons/search.png')}
               />
             </TouchableHighlight>
-            
-
         </View>
-        
       }
-
-      
-
       style={styles.flatlist}
       data={headphones}
       keyExtractor={item => item.id}
-      
-      /*renderItem={({item}) => 
-        <Filter 
-          merk = {item.merk}
-        />
-      }*/
-
-
 
       renderItem={({item}) => 
-        
         <Koptelefoon 
           style={styles.koptelefoon}
 
@@ -83,12 +68,11 @@ import Koptelefoon from '../components/Koptelefoon';
           naam = {item.title.rendered}
           prijs = {item.prijs}
           review = {item.review}
-          onReadMore = {(id) => navigation.navigate('Details', { key: id })} // changed
+          onReadMore = {(id) => navigation.navigate('Details', { key: id })} 
           addToWishlist = {item => setWish(prev => [...prev, item])}
         />
       }
     />
-
       <StatusBar style="auto" />
     </View>
 

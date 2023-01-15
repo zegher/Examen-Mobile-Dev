@@ -2,7 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import React, { useEffect, useState } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { setStatusBarTranslucent } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, uri, Button, Touchable, item } from 'react-native';
+import { StyleSheet, Text, View, Image, uri, Button, Touchable, item, TouchableHighlight } from 'react-native';
 import { withSafeAreaInsets } from 'react-native-safe-area-context';
 
 
@@ -16,12 +16,12 @@ export default function Koptelefoon(props) {
             <Text style={styles.prijs}>€ {props.prijs}</Text>
             <Text>{props.review} &#11088; / 5 &#11088;</Text>
 
-            <Text style={styles.kopen}
-            onPress = {() => props.addToWishlist("lol")}
-            >Voeg toe aan wishlist</Text>
+            <TouchableHighlight onPress = {() => props.addToWishlist(props.naam)}>
+              <Text style={styles.kopen}>Voeg toe aan wishlist</Text>
+            </TouchableHighlight>
+            
 
-            <Button style={styles.knop} color="black" 
-            title='Meer info'
+            <Button style={styles.knop} color="black" title='Meer info'
             onPress={() => props.onReadMore(props.id)} // Changed
             />
             

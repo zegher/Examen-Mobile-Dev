@@ -2,11 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StyleSheet, Text, View, Image, uri, Button, FlatList, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, Image, uri, Button, FlatList} from 'react-native';
 
-
-
-console.log("CartScreen");
 export default function App() {
   return (
     <View style={styles.container}>
@@ -14,12 +11,11 @@ export default function App() {
       <View style={styles.heder}>
         <Image style={styles.cartIcon} source={require('../assets/cart.png')}/>
         <Text style={styles.winkwag}>Jouw wish-list!</Text>
-
       </View>
         
         
     </View>
-        
+      
   );
 }
 
