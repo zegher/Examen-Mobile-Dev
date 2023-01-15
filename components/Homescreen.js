@@ -8,6 +8,11 @@ import Koptelefoon from '../components/Koptelefoon';
  function Homescreen({navigation}){ // changed
 
   const [headphones, setHeadphones] = useState([]);
+
+  //const wishList = [];
+  const [wish, setWish] = useState([]);
+  console.log(wish)
+
   //const [filters, setFilters] = useState([]);
   const getHeadphones = async () => {
     try{
@@ -34,7 +39,7 @@ import Koptelefoon from '../components/Koptelefoon';
             <Text style={styles.header1}>Hoofdtelefoons</Text>
             
             <TouchableHighlight
-              onPress={() => navigation.navigate('Wishlist')}>
+              onPress={() => navigation.navigate('Wishlist', {wishListItems: addToWishlist})}>
               <Image
               style={styles.cartIcon}
               source={require('../assets/cart.png')}
@@ -79,6 +84,7 @@ import Koptelefoon from '../components/Koptelefoon';
           prijs = {item.prijs}
           review = {item.review}
           onReadMore = {(id) => navigation.navigate('Details', { key: id })} // changed
+          addToWishlist = {item => setWish(prev => [...prev, item])}
         />
       }
     />

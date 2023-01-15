@@ -11,7 +11,12 @@ export default function App() {
   return (
     <View style={styles.container}>
 
-      <Text style={styles.winkwag}>Jouw wish-list!</Text>
+      <View style={styles.heder}>
+        <Image style={styles.cartIcon} source={require('../assets/cart.png')}/>
+        <Text style={styles.winkwag}>Jouw wish-list!</Text>
+
+      </View>
+        
         
     </View>
         
@@ -27,6 +32,18 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         margin: 15, 
+    },
+    heder: {
+      flexDirection: "row",
+      justifyContent: "flex-start",
+      marginVertical: 15,
+      marginLeft: 15,
+      width: '100%',
+    },
+    cartIcon: {
+      height: 35,
+      width: 35,
+      marginTop: 10,
     }
     
   });
