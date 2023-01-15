@@ -32,6 +32,15 @@ import Koptelefoon from '../components/Koptelefoon';
       ListHeaderComponent={
         <View style={styles.bheader}>
             <Text style={styles.header1}>Hoofdtelefoons</Text>
+            
+            <TouchableHighlight
+              onPress={() => navigation.navigate('Wishlist')}>
+              <Image
+              style={styles.cartIcon}
+              source={require('../assets/cart.png')}
+              />
+            </TouchableHighlight>
+
             <TouchableHighlight
             onPress={() => navigation.navigate('Search')}>
               <Image
@@ -87,17 +96,15 @@ export default Homescreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'lightgreen',
     alignItems: 'center',
     justifyContent: 'center',
     padding: 20,
   },
   bheader: {
     flexDirection: "row",
-    marginVertical: 5,
+    marginVertical: 3,
     justifyContent: "space-around",
-    margin: -80,
-    backgroundColor: "lightgreen",
   },
   header1: {
     fontSize: 20,
@@ -110,10 +117,15 @@ const styles = StyleSheet.create({
     alignContent: 'center',
   },
   searchIcon: {
-    height: 25,
-    width: 25,
+    height: 30,
+    width: 30,
     paddingTop: -15,
-    backgroundColor: "lightgreen",
   },
+  cartIcon: {
+    height: 35,
+    width: 35,
+    paddingTop: -15,
+    marginLeft: 150,
+  }
   
 });

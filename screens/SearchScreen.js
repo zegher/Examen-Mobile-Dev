@@ -7,7 +7,7 @@ import { StyleSheet, Text, View, Image, uri, Button, FlatList, ImageBackground }
 console.log("é");
 export default function App() {
   return (
-    <View>
+    <View style={styles.screen}>
 
       <View style={styles.zoekbalk}>
         <Text style={styles.zoeken}>   Zoeken...</Text>
@@ -32,10 +32,9 @@ export default function App() {
 
 
   const styles = StyleSheet.create({
-    screen: {
-        flex: 1,
-        alignItems: 'center', 
-        justifyContent: 'center',
+    screen: { 
+        backgroundColor: 'lightgreen',
+        height: '100%',
     },
     zoekbalk: {
       flexDirection: "row",
@@ -70,26 +69,40 @@ export default function App() {
       borderWidth: 1,
       borderRadius: 350,
       padding: 5,
+      backgroundColor: 'white',
+      fontWeight: 'bold',
     },
     sug2: {
       borderWidth: 1,
       borderRadius: 350,
       padding: 5,
+      backgroundColor: 'white',
+      fontWeight: 'bold',
+
     },
     sug3: {
       borderWidth: 1,
       borderRadius: 350,
-      padding: 5,
+      padding: 5,     
+      backgroundColor: 'white',
+      fontWeight: 'bold',
+
     },
     sug4: {
       borderWidth: 1,
       borderRadius: 350,
       padding: 5,
+      backgroundColor: 'white',
+      fontWeight: 'bold',
+
     },
     sug5: {
       borderWidth: 1,
       borderRadius: 350,
       padding: 5,
+      backgroundColor: 'white',
+      fontWeight: 'bold',
+
     },
     
     suggesties: {

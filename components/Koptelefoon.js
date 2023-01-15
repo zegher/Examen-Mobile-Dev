@@ -12,7 +12,7 @@ export default function Koptelefoon(props) {
             <Text style={styles.naam}>{props.naam}</Text>
             <Text style={styles.prijs}>€ {props.prijs}</Text>
             <Text>{props.review} &#11088; / 5 &#11088;</Text>
-            <Text style={styles.kopen}>Koop deze +</Text>
+            <Text style={styles.kopen}>Voeg toe aan wishlist</Text>
 
             <Button style={styles.knop}
             title='Read More'
@@ -46,13 +46,14 @@ export default function Koptelefoon(props) {
     },
     naam: {
       fontSize: 25,
+      fontWeight: 'bold',
     },
     prijs: {
       color: 'black',
       fontSize: 20,
     },
     knop: {
-      backgroundColor: 'black',
+      underlayColor: 'black',
       marginBottom: 15,
     },
     kopen: {
